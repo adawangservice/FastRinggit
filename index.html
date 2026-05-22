@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastRinggit - Borang Rayuan Pengurangan Tunggakan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="assets/logo.png" alt="FastRinggit Logo" class="logo">
+                </div>
+                <div class="header-text">
+                    <h1>FastRinggit</h1>
+                    <p class="tagline">Urus Wang Dengan Cepat Bersama FASTRINGGIT<br>Pantas • Mudah • Selamat</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Form -->
+        <main class="main-content">
+            <div class="form-container">
+                <h2>Borang Rayuan Pengurangan Tunggakan</h2>
+                <p class="form-description">
+                    Sila isikan maklumat berikut dengan jujur dan lengkap. Rayuan anda akan diproses dalam masa 3-5 hari bekerja.
+                </p>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-content">
+                        <h3>✅ Rayuan Berjaya Dihantar!</h3>
+                        <p>Terima kasih telah mengemukakan rayuan anda.</p>
+                        <p class="success-detail">Tim kami akan menghubungi anda dalam 3-5 hari bekerja untuk membincangkan rayuan anda lebih lanjut.</p>
+                        <div class="contact-section">
+                            <h4>Hubungi Kami Jika Ada Pertanyaan:</h4>
+                            <p>📱 WhatsApp: <strong>+60-12-3456-7890</strong></p>
+                            <p>📧 Email: <strong>support@fastringgit.com</strong></p>
+                            <p>🕐 Jam: Isnin - Jumaat, 9 Pagi - 6 Petang (Waktu Malaysia)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="customerForm" class="customer-form">
+                    <!-- Nama -->
+                    <div class="form-group">
+                        <label for="nama">Nama Penuh *</label>
+                        <input type="text" id="nama" name="nama" placeholder="Contoh: Muhammad Ahmad bin Ali" required>
+                        <span id="namaError" class="error-message"></span>
+                    </div>
+
+                    <!-- IC Number -->
+                    <div class="form-group">
+                        <label for="ic">No. Kad Pengenalan (IC) *</label>
+                        <input type="text" id="ic" name="ic" placeholder="Contoh: 990515-10-1234" required>
+                        <span id="icError" class="error-message"></span>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="form-group">
+                        <label for="phone">No. Telefon Berdaftar *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Contoh: 0123456789" required>
+                        <span id="phoneError" class="error-message"></span>
+                    </div>
+
+                    <!-- Jumlah Tunggakan -->
+                    <div class="form-group">
+                        <label for="amountOutstanding">Jumlah Tunggakan (RM) *</label>
+                        <input type="number" id="amountOutstanding" name="amountOutstanding" placeholder="Contoh: 5000" step="0.01" min="0" required>
+                        <span id="amountOutstandingError" class="error-message"></span>
+                    </div>
+
+                    <!-- Jumlah Rayuan Bayar -->
+                    <div class="form-group">
+                        <label for="amountProposed">Jumlah Rayuan Bayar (RM) *</label>
+                        <input type="number" id="amountProposed" name="amountProposed" placeholder="Contoh: 2500" step="0.01" min="0" required>
+                        <span id="amountProposedError" class="error-message"></span>
+                    </div>
+
+                    <!-- Tarikh Akhir Pembayaran -->
+                    <div class="form-group">
+                        <label for="paymentDeadline">Tarikh Akhir Pembayaran *</label>
+                        <input type="date" id="paymentDeadline" name="paymentDeadline" required>
+                        <span id="paymentDeadlineError" class="error-message"></span>
+                    </div>
+
+                    <!-- Alasan Rayuan -->
+                    <div class="form-group">
+                        <label for="reason">Alasan Rayuan *</label>
+                        <textarea id="reason" name="reason" placeholder="Sila jelaskan alasan anda memohon pengurangan tunggakan..." rows="5" maxlength="500" required></textarea>
+                        <span class="char-info">
+                            <small id="charCount">0</small>/500 aksara
+                        </span>
+                        <span id="reasonError" class="error-message"></span>
+                    </div>
+
+                    <!-- Agreement Checkbox -->
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement" class="checkbox-label">
+                            Saya mengaku bahawa maklumat di atas adalah benar dan tepat. Saya memahami bahawa maklumat palsu boleh mengakibatkan tindakan undang-undang.
+                        </label>
+                        <span id="agreementError" class="error-message"></span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-submit">Hantar Rayuan</button>
+                        <button type="reset" class="btn btn-reset">Kosongkan Borang</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Social Media Section -->
+        <section class="social-media-section">
+            <h3>Ikuti FastRinggit di Media Sosial</h3>
+            <div class="social-media-grid">
+                <!-- Facebook -->
+                <div class="social-media-card">
+                    <div class="social-icon facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <p class="social-platform">Facebook</p>
+                        <p class="social-handle">@FastRinggitOfficial</p>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="social-media-card">
+                    <div class="social-icon instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.205.633 3.49.935 2.902 1.347 2.322 1.927c-.58.58-.99 1.168-1.293 1.883-.3.7-.502 1.57-.56 2.849C.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.058 1.277.26 2.148.56 2.849.297.697.726 1.268 1.293 1.931.58.58 1.168.987 1.883 1.289.7.298 1.569.499 2.847.559C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.059 2.148-.261 2.849-.56.713-.302 1.268-.726 1.931-1.293.579-.58.987-1.168 1.289-1.883.299-.7.499-1.569.559-2.848.046-1.246.063-1.646.063-4.848s-.015-3.667-.072-4.947c-.058-1.277-.26-2.148-.56-2.849-.297-.697-.726-1.268-1.293-1.931-.58-.58-1.168-.987-1.883-1.289-.7-.299-1.569-.499-2.848-.559C15.667.015 15.26 0 12 0zm0 2.163c3.204 0 3.584.012 4.849.07 1.17.054 1.804.244 2.227.408.561.217.96.477 1.382.896.419.42.679.821.896 1.381.164.423.355 1.058.408 2.227.058 1.265.07 1.645.07 4.849 0 3.204-.012 3.584-.07 4.849-.054 1.17-.244 1.804-.408 2.227-.217.561-.477.96-.896 1.382-.42.419-.821.679-1.381.896-.423.164-1.058.355-2.227.408-1.265.058-1.645.07-4.849.07-3.204 0-3.584-.012-4.849-.07-1.17-.054-1.804-.244-2.227-.408-.561-.217-.96-.477-1.382-.896-.419-.42-.679-.821-.896-1.381-.164-.423-.355-1.058-.408-2.227-.058-1.265-.07-1.645-.07-4.849 0-3.204.012-3.584.07-4.849.054-1.17.244-1.804.408-2.227.217-.561.477-.96.896-1.382.42-.419.821-.679 1.381-.896.423-.164 1.058-.355 2.227-.408 1.265-.058 1.645-.07 4.849-.07zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <p class="social-platform">Instagram</p>
+                        <p class="social-handle">@fastringgit_official</p>
+                    </div>
+                </div>
+
+                <!-- TikTok -->
+                <div class="social-media-card">
+                    <div class="social-icon tiktok">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.89 2.89 0 1 1-5.92-2.32c1.52-1.68 3.97-1.75 4.38-.06v-3.66a7.73 7.73 0 0 0-5.85 2.59C3.66 10.33 2.5 15.5 3.97 20.5c1.36 4.62 5.78 8 10.6 8 5.87 0 10.61-4.74 10.61-10.61V9.44a7.71 7.71 0 0 0 3.79 1.01v-3.68a4.82 4.82 0 0 1-.73-.06z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <p class="social-platform">TikTok</p>
+                        <p class="social-handle">@fastringgit</p>
+                    </div>
+                </div>
+
+                <!-- YouTube -->
+                <div class="social-media-card">
+                    <div class="social-icon youtube">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <p class="social-platform">YouTube</p>
+                        <p class="social-handle">@FastRinggitOfficial</p>
+                    </div>
+                </div>
+
+                <!-- Twitter/X -->
+                <div class="social-media-card">
+                    <div class="social-icon twitter">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 002.856-3.215 10.009 10.009 0 01-2.857 1.15 4.985 4.985 0 002.164-2.881c-.951.564-2.005.974-3.127 1.195a4.982 4.982 0 00-8.506 4.55A14.129 14.129 0 011.671 3.149a4.822 4.822 0 001.543 6.659 4.960 4.960 0 01-2.261-.569v.06a4.983 4.983 0 003.995 4.882 4.982 4.982 0 01-2.254.085 4.985 4.985 0 004.659 3.459A9.998 9.998 0 010 19.54a13.978 13.978 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                    </div>
+                    <div class="social-info">
+                        <p class="social-platform">Twitter/X</p>
+                        <p class="social-handle">@FastRinggitMY</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hubungi Kami</h3>
+                    <p>📱 WhatsApp: +60-12-3456-7890</p>
+                    <p>📧 Email: support@fastringgit.com</p>
+                    <p>🕐 Jam: Isnin - Jumaat, 9 Pagi - 6 Petang</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Maklumat</h3>
+                    <p>Syarat & Syarat</p>
+                    <p>Dasar Privasi</p>
+                    <p>Hubungi Sokongan</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Tentang FastRinggit</h3>
+                    <p>FastRinggit adalah platforma pinjaman digital yang terpercaya dan berpengalaman dalam memberikan solusi kewangan untuk masyarakat Malaysia.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FastRinggit. Semua hak terpelihara. Diperkuat oleh Teknologi.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
