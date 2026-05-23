@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastRinggit - Senarai Tugasan</title>
+    <link rel="stylesheet" href="todo-styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1>📝 Senarai Tugasan FastRinggit</h1>
+                <p>Urus tugasan anda dengan mudah dan cekap</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        class="task-input" 
+                        placeholder="Tambah tugasan baru... (Contoh: Bayar bil elektrik)"
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="btn btn-add">Tambah</button>
+                </div>
+                <div id="inputError" class="input-error"></div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-label">Jumlah Tugasan</div>
+                    <div class="stat-value" id="totalCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Siap ✅</div>
+                    <div class="stat-value" id="completedCount">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Belum 📌</div>
+                    <div class="stat-value" id="activeCount">0</div>
+                </div>
+            </section>
+
+            <!-- Progress Bar -->
+            <section class="progress-section">
+                <div class="progress-header">
+                    <span>Kemajuan Penyelesaian</span>
+                    <span id="progressText">0% Siap</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="active">Belum Siap</button>
+                <button class="filter-btn" data-filter="completed">Siap</button>
+            </section>
+
+            <!-- Task List -->
+            <section class="task-section">
+                <div id="taskList" class="task-list">
+                    <!-- Tasks will be rendered here -->
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="action-section">
+                <button id="clearCompleted" class="btn btn-secondary">🗑️ Padam Yang Siap</button>
+                <button id="clearAll" class="btn btn-danger">⚠️ Padam Semua</button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>💾 Data anda disimpan secara automatik (Local Storage)</p>
+            <p>🔒 Data bersifat peribadi dan hanya disimpan di peranti anda</p>
+        </footer>
+    </div>
+
+    <script src="todo-script.js"></script>
+</body>
+</html>

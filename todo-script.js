@@ -339,49 +339,10 @@ class TodoApp {
         div.textContent = text;
         return div.innerHTML;
     }
-
-    // Export Tasks as JSON
-    exportTasks() {
-        const dataStr = JSON.stringify(this.tasks, null, 2);
-        const dataBlob = new Blob([dataStr], { type: 'application/json' });
-        const url = URL.createObjectURL(dataBlob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `fastringgit-tasks-${new Date().getTime()}.json`;
-        link.click();
-    }
-
-    // Import Tasks from JSON
-    importTasks(file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            try {
-                const imported = JSON.parse(e.target.result);
-                if (Array.isArray(imported)) {
-                    this.tasks = imported;
-                    this.saveTasks();
-                    this.render();
-                    alert('Tugasan berjaya diimport!');
-                }
-            } catch (error) {
-                alert('Ralat mengimport fail: ' + error.message);
-            }
-        };
-        reader.readAsText(file);
-    }
 }
 
 // Initialize App when DOM is ready
 let app;
 document.addEventListener('DOMContentLoaded', () => {
     app = new TodoApp();
-});
-
-// Keyboard Shortcuts
-document.addEventListener('keydown', (e) => {
-    // Ctrl+S or Cmd+S - Export
-    if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-        e.preventDefault();
-        app.exportTasks();
-    }
 });
